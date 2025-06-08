@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+from PIL import Image, ImageTk
 
 # 메인 창 생성
 root = tk.Tk()
@@ -30,7 +31,13 @@ for y in range(map_y):
 messagebox.showinfo("테스트", terrains)
 
 # (테스트) 맵 일부 속성 설정
-terrains[1][1].config(bg="green")
+# 1) 이미지 불러오기 및 설정
+img = Image.open("img/Zergling.jpg")  # 사용하고자 하는 이미지 파일명
+img = img.resize((80, 80))  # 크기 조정 (선택사항)
+tk_img = ImageTk.PhotoImage(img)
+# 2) 이미지 참조
+terrains[1][1].image = tk_img  # 참조 저장
+terrains[1][1].config(image=tk_img, text="")  # 이미지로 설정하고 텍스트는 제거
 
 # 
 root.mainloop()
