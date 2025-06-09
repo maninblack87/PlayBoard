@@ -39,5 +39,5 @@ tk_img = ImageTk.PhotoImage(img)
 terrains[1][1].image = tk_img  # 참조 저장
 terrains[1][1].config(image=tk_img, text="")  # 이미지로 설정하고 텍스트는 제거
 
-# 
+# 메인 창으로 GUI생성
 root.mainloop()
