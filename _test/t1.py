@@ -24,7 +24,7 @@ for y in range(rows):
         # 각 그리드마다 레이블 생성&배치
         label = tk.Label(
             root,
-            text=f"{x+(y*cols)}",
+            text=f"{x+(y*cols)+1}",
             bg="SystemButtonFace",
             borderwidth=1, 
             relief="solid",
