@@ -1,43 +1,69 @@
 import tkinter as tk
-from tkinter import messagebox
-from PIL import Image, ImageTk
+from dragdrop_label import DragDropLabel
+from unit_factory import create_unit  # 🔽 유닛 생성 함수 import
+from unit_events import spawn_unit  # 👈 새로운 파일에서 import
 
-# 메인 창 생성
 root = tk.Tk()
 root.title("Starcraft")
-root.geometry("800x600")
+root.geometry("800x700")
 root.resizable(False, False)
 root.option_add("Font", "Gothic 12")
 
-# 그리드 레이아웃으로 배치
-# 1) 맵 x, y축 변수 세팅(변수)
 map_x = 8
-map_y = 6
-# 2) 맵 그리드 레이아웃 세팅
-for i in range(map_x):
-    root.columnconfigure(i, weight=1)
-for i in range(map_y):
-    root.rowconfigure(i, weight=1)
+map_y = 7
+label_size = 90
+slots = {}
 
-# 맵 지형배치
-terrains = []
+# ✅ 드롭 처리 함수
+def handle_drop(unit_label):
+    x_root = unit_label.winfo_pointerx() - root.winfo_rootx()
+    y_root = unit_label.winfo_pointery() - root.winfo_rooty()
+    grid_x = x_root // label_size
+    grid_y = y_root // label_size
+
+    if (grid_x, grid_y) in slots:
+        unit_label.place(
+            x=grid_x * label_size,
+            y=grid_y * label_size
+        )
+        unit_label.origin_x = grid_x * label_size
+        unit_label.origin_y = grid_y * label_size
+    else:
+        unit_label.place(
+            x=unit_label.origin_x,
+            y=unit_label.origin_y
+        )
+
+# ✅ 슬롯 배치
 for y in range(map_y):
-    row = []
     for x in range(map_x):
-        label = tk.Label(root, text=f"{x},{y}", borderwidth=1, relief="solid", width=10, height=4, bg="lightgray")
-        label.grid(row=y, column=x, sticky="nsew")
-        row.append(label)
-    terrains.append(row)
-messagebox.showinfo("테스트", terrains)
+        if x in [0, 7] and y in [0, 1, 2]:
+            label = tk.Label(
+                root,
+                text="고정 슬롯",
+                bg="lightgray",
+                borderwidth=1,
+                relief="solid"
+            )
+        elif y in [4, 5, 6]:
+            label = tk.Label(
+                root,
+                text=f"유닛 {(y-4)*map_x+x}",
+                bg="white",
+                borderwidth=1,
+                relief="ridge"
+            )
+            # 🔽 클릭 시 유닛 생성
+            label.bind("<Button-1>", lambda e, x=x, y=y: spawn_unit(e, root, x, y, label_size, handle_drop))
+        else:
+            continue
 
-# (테스트) 맵 일부 속성 설정
-# 1) 이미지 불러오기 및 설정
-img = Image.open("img/Zergling.jpg")  # 사용하고자 하는 이미지 파일명
-img = img.resize((80, 80))  # 크기 조정 (선택사항)
-tk_img = ImageTk.PhotoImage(img)
-# 2) 이미지 참조
-terrains[1][1].image = tk_img  # 참조 저장
-terrains[1][1].config(image=tk_img, text="")  # 이미지로 설정하고 텍스트는 제거
+        label.place(
+            x=x * label_size,
+            y=y * label_size,
+            width=label_size,
+            height=label_size
+        )
+        slots[(x, y)] = label
 
-# 메인 창으로 GUI생성
 root.mainloop()
