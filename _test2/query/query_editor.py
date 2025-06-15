@@ -45,3 +45,5 @@ def register_unit(name, img, atk, dur):
 
     insert_query = "INSERT INTO unit VALUES(%s, %s, %s, %s)"
     cursor.execute(insert_query, (name, img, atk, dur))
+
+    # .... 작업 중 ....
