@@ -5,7 +5,7 @@ def on_drag_start(event):
     widget.startY = event.y
     widget.tkraise()
 
-# 드래그 드롭롭
+# 드래그 드롭
 def on_drag_motion(event):
     widget = event.widget
     widget.place(
@@ -17,6 +17,7 @@ def on_drag_motion(event):
     # widget.startX = 위젯내에서 마우스 포인터의 <<시작점>> 위치
     # event.x = 위젯내에서 마우스 포인터의 <<현재>> 위치
 
+# 드래그 드롭 놓을때
 def on_drag_release(event, all_labels):
     dragged = event.widget
     x_root = event.x_root   # (참고) x_root는 스크린(모니터) 기준의 마우스 커서 절대좌표

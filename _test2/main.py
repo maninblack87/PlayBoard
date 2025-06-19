@@ -3,6 +3,7 @@ from dbconnect import connect_to_mysql
 from query.query_editor import create_unit_table
 
 # 최초 실행시
+# 1. 유닛테이블 생성
 create_unit_table()
 
 # 데이터베이스 연결
