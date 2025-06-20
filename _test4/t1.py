@@ -50,9 +50,6 @@ def on_drag_release(event, all_labels):
             )
             break
 
-
-def create_unit(root)
-
 # 메인창 생성
 root = tk.Tk()
 root.title("t1 드래그드롭 테스트")

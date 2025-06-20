@@ -22,7 +22,7 @@ class DragDropLabel(tk.Label):
     def on_start_drag(self, event):
         self.drag_data["x"] = event.x
         self.drag_data["y"] = event.y
-        self.lift()
+        # self.lift()
 
     def on_drag_motion(self, event):
         new_x = self.winfo_x() + (event.x - self.drag_data["x"])
