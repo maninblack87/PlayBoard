@@ -1,7 +1,7 @@
-# tiling.py
+# map.py
 import tkinter as tk
 
-class Tiling:
+class Map:
     
     def __init__(self, root, map_x, map_y, tile_w, tile_h):
         """
@@ -20,9 +20,9 @@ class Tiling:
         self.tiles = {}
 
         # 맵 전체에 기본 타일을 배치한다
-        self.base_tiling()
+        self.base_mapping()
 
-    def base_tiling(self) -> None:
+    def base_mapping(self) -> None:
         """
         그리드 전체에(xs, ys) 기본 타일(레이블)을 배치한다
         """
@@ -45,7 +45,7 @@ class Tiling:
 
                 self.tiles[(x, y)] = label
     
-    def update_tile(self, x: int, y: int, text: str = None, bg: str = None) -> None:
+    def update_map(self, x: int, y: int, text: str = None, bg: str = None) -> None:
         """
         특정 그리드에(x, y) 타일(레이블)의 속성을 수정한다
         1) 텍스트

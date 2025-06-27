@@ -90,5 +90,4 @@ for y in range(map_y):
         )
         slots[(x, y)] = label
 
-
 root.mainloop()
