@@ -2,6 +2,18 @@
 import tkinter as tk
 
 class Map:
+    """
+    맵을 생성하고 맵의 속성을 변경한다
+
+    0. 생성자 : base_mapping()를 즉시 실행
+    1. base_mapping : 지정된 그리드 전체에(xs, ys) 기본 타일(레이블)을 배치한다
+    2. modify_map : 특정 그리드에(x, y) 타일(레이블)의 속성을 수정한다
+
+    root : 맵이 만들어질 부모 창
+    map_x, map_y : 맵 사이즈(단위: 타일개수)
+    tile_w, tile_h : 타일 사이즈(w: 너비, h: 높이)
+    tiles : 맵내 타일들의 딕셔너리
+    """
     
     def __init__(self, root, map_x, map_y, tile_w, tile_h):
         """
@@ -23,9 +35,7 @@ class Map:
         self.base_mapping()
 
     def base_mapping(self) -> None:
-        """
-        그리드 전체에(xs, ys) 기본 타일(레이블)을 배치한다
-        """
+
         for y in range(self.map_y):
             for x in range(self.map_x):
                 label = tk.Label(
@@ -45,7 +55,7 @@ class Map:
 
                 self.tiles[(x, y)] = label
     
-    def update_map(self, x: int, y: int, text: str = None, bg: str = None) -> None:
+    def modify_map(self, x: int, y: int, text: str = None, bg: str = None) -> None:
         """
         특정 그리드에(x, y) 타일(레이블)의 속성을 수정한다
         1) 텍스트
