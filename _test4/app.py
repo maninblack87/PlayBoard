@@ -1,6 +1,6 @@
 # app.py
 import tkinter as tk
-from modules import map, factory
+import map, factory
 
 root = tk.Tk()
 root.title("Sc 테스트4")
