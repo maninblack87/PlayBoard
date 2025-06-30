@@ -18,6 +18,7 @@ def create_unit(root, x, y, label_size, drop_callback, text="유닛", color="sky
         borderwidth=2,
         drop_callback=drop_callback
     )
+
     # 유닛이 생성되는 >>실제<< 위치
     px = x * label_size
     py = y * label_size
@@ -33,4 +34,6 @@ def create_unit(root, x, y, label_size, drop_callback, text="유닛", color="sky
     # 시작 위치(원래 위치값) 갱신
     unit.origin_x = px
     unit.origin_y = py
+
+    # 
     return unit
