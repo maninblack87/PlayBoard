@@ -30,9 +30,9 @@ class Factory:
 
         # 팩토리 생성
         self.factory = tk.Label(
-            self.root, 
-            fac_name=self.fac_name,
-            relief="solid"
+            self.root,
+            text = fac_name,
+            relief = "solid"
         )
 
         # 팩토리 활성화 여부
@@ -47,10 +47,10 @@ class Factory:
 
         # 팩토리 배치
         self.factory.place(
-            x=self.x + (self.grid_w - self.label_w)/2,
-            y=self.y + (self.grid_h - self.label_h)/2, 
-            width=self.label_w, 
-            height=self.label_h
+            x=self.x + (self.grid_w - self.fac_w)/2,
+            y=self.y + (self.grid_h - self.fac_h)/2, 
+            width=self.fac_w, 
+            height=self.fac_h
         )
 
         # 클릭 이벤트 바인딩
