@@ -60,5 +60,30 @@ for i in range(len(corner_frame)):
     corner = tk.Label(corner_frame[i], text=corner_map_name[i], bg="#eee")
     corner.place(x=0, y=0, width=map_w, height=map_h)
 
+tops = []
+top_map_name = ["프라하", "푸켓", "베를린", "CARD", "모스크바", "제네바", "로마"]
+for i in range(len(top_frame)):
+    label = tk.Label(top_frame[i], text=top_map_name[i], bg="#ffa")
+    label.place(relx=0.5, rely=0.5, anchor="center")
+
+
+bottoms = []
+bottom_map_name = ["카이로", "두바이", "타이페이", "독도", "베이징", "BONUS", "방콕"]
+for i in range(len(bottom_frame)):
+    label = tk.Label(bottom_frame[i], text=bottom_map_name[i], bg="#cfc")
+    label.place(relx=0.5, rely=0.5, anchor="center")
+
+lsides = []
+lside_map_name = ["상파울로", "하와이", "퀘백", "CARD", "시드니", "도쿄", "발리"]
+for i in range(len(lside_frame)):
+    label = tk.Label(lside_frame[i], text=lside_map_name[i], bg="#aff")
+    label.place(relx=0.5, rely=0.5, anchor="center")
+
+rsides = []
+rside_map_name = ["타히티", "런던", "파리", "CARD", "뉴욕", "국세청", "서울"]
+for i in range(len(rside_frame)):
+    label = tk.Label(rside_frame[i], text=rside_map_name[i], bg="#fcc")
+    label.place(relx=0.5, rely=0.5, anchor="center")
+
 # 메인창 GUI 활성화
 root.mainloop()
