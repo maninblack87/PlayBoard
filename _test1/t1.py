@@ -44,7 +44,7 @@ for y in range(rows):
             lambda e, all_labels=None: dragdrop.on_drag_release(e, [label for row in terrains for label in row])
             # !! 참고 !!
             # [label for row in terrains for label in row]은 terrains 모든 레이블을 가리킴
-            # 반복문안에 반복문이 있는 구조
+            # 이것은 2차 반복문이니까
         )
         # (반복문:x축) row배열에 레이블 추가
         row.append(label)
