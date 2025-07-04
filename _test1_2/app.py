@@ -13,25 +13,26 @@ terrains = []
 for y in range(rows):
     row = []
     for x in range(cols):
+        
         label = tk.Label(
             root,
-            text=f"{x+(y*cols)+1}",
+            text=f"{(y*cols)+x+1}",
             bg="white",
             borderwidth=1,
             relief="solid",
             width=10,
             height=4
         )
-        label.place(x=x*label_size, y=y * label_size)
+        label.place(x = x*label_size, y = y*label_size)
+
         label.bind("<Double-Button-1>", toggle_color.toggle_color)
         label.bind("<Button-1>", dragdrop.on_drag_start)
         label.bind("<B1-Motion>", dragdrop.on_drag_motion)
-        label.bind("<ButtonRelease-1>", lambda e, all_labels=None: dragdrop.on_drag_release(e, [label for row in terrains for label in row]))
-        print(label.winfo_x())
-
+        label.bind(
+            "<ButtonRelease-1>",
+            lambda e, all_labels=None: dragdrop.on_drag_release(e, [label for row in terrains for label in row])
+        )
         row.append(label)
     terrains.append(row)
-
-
 
 root.mainloop()
