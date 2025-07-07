@@ -13,9 +13,9 @@ def on_drag_motion(event):
         y=widget.winfo_y() - widget.startY + event.y
     )
     # !! 참고 !!
-    # widget.winfo_x() = 위젯의 <<현재>> 위치
-    # widget.startX = 위젯내에서 마우스 포인터의 <<시작점>> 위치
-    # event.x = 위젯내에서 마우스 포인터의 <<현재>> 위치
+    # widget.winfo_x() = 위젯의 <<이벤트 발생 전>> 위치
+    # widget.startX = 위젯내에서 마우스 포인터의 <<이벤트 발생 전>> 위치
+    # event.x = 위젯내에서 마우스 포인터의 <<이벤트 발생 후>> 위치
 
 # 드래그 드롭 놓을때
 def on_drag_release(event, all_labels):

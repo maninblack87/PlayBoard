@@ -51,5 +51,7 @@ for y in range(rows):
     # (반복문:y축) 지형 배열에 row추가
     terrains.append(row)
 
+    
+
 # 
 root.mainloop()
