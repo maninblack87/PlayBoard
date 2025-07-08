@@ -25,7 +25,7 @@ def on_drag_release(event, all_labels):
 
     for target in all_labels:
 
-        # 체크할 label(target)과 드래그 대상인 label(dragged)이 동일하면 로직을 중단하고
+        # 체크할 label(target)이 드래그 대상인 label(dragged)과 동일하면 로직을 중단하고
         # 즉시 다음 label로 로직 수행
         if target == dragged:
             continue
