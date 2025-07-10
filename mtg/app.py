@@ -13,7 +13,12 @@ root.resizable(False, False)
 root.option_add("Font", "Gothic 12")
 
 # 매핑
-map.Map(root, "frame", 10, 4, 100, 100)
+map = map.Map(root, "frame", 10, 4, 100, 100)
+map.print_map()
+
+# 유저1 정보
+user1_info = map.Map(root, "label", 1, 2, 100, 100)
+user1_info.print_map()
 
 # GUI 실행
 root.mainloop()
