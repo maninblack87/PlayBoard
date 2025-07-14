@@ -1,3 +1,5 @@
+# planeswalkers/planeswalker.py
+
 import planeswalkers.abilities
 
 class Planeswalker:
@@ -25,6 +27,6 @@ class Planeswalker:
         self.abilities["ab2"] = [ab2_cost, ab2_list]
         self.abilities["ab3"] = [ab3_cost, ab3_list]
 
-    # 히트포인트 감소 함수
+    # 히트포인트 감소 함수 <- 해당 함수가 필요하지 않을 수 있음
     def reduce_hitpoint(self, amount:int):
         self.current_hitpoint = self.current_hitpoint - amount
