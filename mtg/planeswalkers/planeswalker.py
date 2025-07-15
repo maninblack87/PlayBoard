@@ -14,7 +14,7 @@ class Planeswalker:
         self.abilities = {"ab1" : [0, []], "ab2" : [0, []], "ab3" : [0, []]}
 
     # 에너지 보너스 보정치 세팅 함수
-    def set_energy_bonus(self, white_bonus, red_bonus, green_bonus, blue_bonus, black_bonus):
+    def set_energy_bonus(self, white_bonus:int=0, red_bonus:int=0, green_bonus:int=0, blue_bonus:int=0, black_bonus:int=0):
         self.energy_bonus["white"] = white_bonus
         self.energy_bonus["red"] = red_bonus
         self.energy_bonus["green"] = green_bonus
