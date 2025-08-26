@@ -1,9 +1,11 @@
+# map.py
+
 import tkinter as tk
 
 class Map:
 
-    def __init__(self, parent_widget:tk.Label|tk.Frame=None, type:str="frame", start_col:int=None, start_row:int=None, cols:int=None, rows:int=None, grid_w:int=None, grid_h:int=None, width:int|None=None, height:int|None=None):
-        self.parent_widget = parent_widget
+    def __init__(self, root:tk.Label|tk.Frame=None, type:str="frame", start_col:int=None, start_row:int=None, cols:int=None, rows:int=None, grid_w:int=None, grid_h:int=None, width:int|None=None, height:int|None=None):
+        self.root = root
         self.start_col = start_col
         self.start_row = start_row
         self.cols = cols
@@ -26,7 +28,7 @@ class Map:
             for x in range(self.start_col, self.start_col + self.cols):
                 
                 frame = tk.Frame(
-                    self.parent_widget,
+                    self.root,
                     borderwidth=1,
                     relief="solid"
                 )
@@ -49,7 +51,7 @@ class Map:
             for x in range(self.start_col, self.start_col + self.cols):
                 
                 label = tk.Label(
-                    self.parent_widget,
+                    self.root,
                     borderwidth=1,
                     relief="solid",
                     text="레이블"
