@@ -7,7 +7,7 @@ use mtg;
 create table if not exists user (
     id varchar(32) primary key not null,
     pw varchar(20) not null,
-    plwkr_id1 varchar(100),     -- user 아이디 뒤에 planeswalker 이름이 붙게 됨
+    plwkr_id1 varchar(100),     -- user 아이디 뒤에 planeswalker 이름이 붙게 됨("id_plwkrname")
     plwkr_id2 varchar(100),
     plwkr_id3 varchar(100),
     plwkr_id4 varchar(100),
