@@ -14,7 +14,7 @@ def create_unit(root, x, y, label_size, drop_callback, text="유닛", color="sky
         root,
         text=f"{text}",
         bg=color,
-        relief="sunken",
+        relief="raised",
         borderwidth=2,
         drop_callback=drop_callback
     )

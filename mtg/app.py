@@ -1,11 +1,12 @@
 # app.py
-
 import tkinter as tk
 import map
+
 
 # 초기 설정
 cols, rows = 5, 10
 grid_w, grid_h = 150, 72
+
 
 # 메인창
 root = tk.Tk()
@@ -13,6 +14,7 @@ root.geometry(f"{cols*grid_w}x{rows*grid_h}+0+0")
 root.title("테스트-mtg")
 root.resizable(False, False)
 root.option_add("Font", "Gothic 12")
+
 
 # 매핑
 mapping = map.Map(root, "frame", 0, 0, cols, rows, grid_w, grid_h)
@@ -25,7 +27,6 @@ mapping.modify_bg(0, 1, 1, 3, "#ffa")
 #
 user1_slots = map.Map(root, "frame", 0, 4, 1, 6, grid_w, grid_h)
 user1_slots.modify_bg(0, 0, 1, 6, "#fee")
-
 
 
 # 유저2
