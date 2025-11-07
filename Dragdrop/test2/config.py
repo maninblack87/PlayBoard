@@ -1,0 +1,9 @@
+# config.py
+ROOT_WIDTH = 1000
+ROOT_HEIGHT = 900
+
+MAP_WIDTH = 100
+MAP_HEIGHT = 100
+MAP_X = 10
+MAP_Y = 8
+
