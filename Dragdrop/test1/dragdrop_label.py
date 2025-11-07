@@ -16,7 +16,6 @@ class DragDropLabel(tk.Label):
     def on_start_drag(self, event):
         self.drag_data["x"] = event.x
         self.drag_data["y"] = event.y
-        print(f"드래그 시작 : {self.drag_data["x"]}, {self.drag_data["y"]}")
 
     def on_drag_motion(self, event):
         new_winfo_x = self.winfo_x() + (event.x - self.drag_data["x"])
@@ -26,4 +25,3 @@ class DragDropLabel(tk.Label):
     def on_drop(self, event):
         if self.drop_callback:
             self.drop_callback(self)
-        print(f"드래그 종료 : {self.drag_data["x"]}, {self.drag_data["y"]}")

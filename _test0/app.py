@@ -15,7 +15,7 @@ label_size = 90
 slots = {}
 
 # 드롭 처리 함수
-def handle_drop(unit_label):
+def handle_drop(unit_label:tk.Label):
 
     # x_root : 마우스의 현재 위치(상대좌표) 산출
     # winfo_pointerx() : 화면 기준 마우스 좌표 

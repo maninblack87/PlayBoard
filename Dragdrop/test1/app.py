@@ -1,8 +1,10 @@
 # app.py
 import tkinter as tk
-from config import ROOT_WIDTH, ROOT_HEIGHT, MAP_WIDTH, MAP_HEIGHT, MAP_X, MAP_Y
+from functools import partial
 
+from config import ROOT_WIDTH, ROOT_HEIGHT, MAP_WIDTH, MAP_HEIGHT, MAP_X, MAP_Y
 from dragdrop_label import DragDropLabel
+from handle_drop import handle_drop
 
 # 메인 창
 root = tk.Tk()
@@ -24,8 +26,10 @@ for y in range(MAP_Y):
         )
         map_frames[(x, y)] = map_frame
 
+handle_drop_callback = partial(handle_drop, root, map_frames, map_width=MAP_WIDTH, map_height=MAP_HEIGHT)
+
 # << 테스트용 레이블 >>
-test_lbl = DragDropLabel(root, relief="raised", text="테스트\n레이블")
+test_lbl = DragDropLabel(root, handle_drop_callback, relief="raised", text="테스트\n레이블")
 test_lbl.place(
     x = 0,
     y = 0,
