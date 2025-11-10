@@ -36,8 +36,8 @@ create_box_btn.pack(side="left", padx=20)
 delete_box_btn = tk.Button(ctrl_frame, text="박스삭제", padx=10, pady=10)
 delete_box_btn.pack(side="left", padx=20)
 # >> 박스 스폰 위치
-spawn_frame = tk.Frame(ctrl_frame, width=100, height=100, relief="sunken", borderwidth=2)
-spawn_frame.pack(side="left", padx=20)
+box_slot = tk.Frame(ctrl_frame, width=100, height=100, relief="sunken", borderwidth=2)
+box_slot.pack(side="left", padx=20)
 
 # GUI 활성화
 root.mainloop()

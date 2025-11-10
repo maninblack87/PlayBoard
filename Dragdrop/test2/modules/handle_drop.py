@@ -1,6 +1,6 @@
 # modules/handle_drop.py
 import tkinter as tk
-from dragdrop_label import DragDropLabel
+from modules.dragdrop_label import DragDropLabel
 
 def handle_drop(root:tk.Tk|tk.Widget, drop_label:tk.Label|DragDropLabel, map_frames:dict , map_width, map_height):
 
@@ -19,7 +19,13 @@ def handle_drop(root:tk.Tk|tk.Widget, drop_label:tk.Label|DragDropLabel, map_fra
             x = grid_x * map_width,
             y = grid_y * map_height,
         )
+        drop_label.origin_x = drop_label.grid_x * map_width
+        drop_label.origin_y = drop_label.grid_y * map_height
         
-
     # 그렇지 않다면
     # >> 해당 레이블은 원 위치로 복귀 시킨다
+    else:
+        drop_label.place(
+            x = drop_label.origin_x,
+            y = drop_label.origin_y,
+        )
